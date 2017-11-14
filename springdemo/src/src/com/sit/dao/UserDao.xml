@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.com.sit.dao">
+    <parameterMap id="parameterMap" type="com.com.sit.bean.User"></parameterMap>
+    <resultMap id="resultMap" type="com.com.sit.bean.User">
+        <result property="id" column="id"></result>
+        <result property="uname" column="uname"></result>
+        <result property="password" column="password"></result>
+        <result property="sex" column="sex"></result>
+    </resultMap>
+    <sql id="columnsql" >
+      <trim suffixOverrides=",">
+          t.id,
+          t.uname,
+          t.password,
+          t.sex,
+      </trim>
+
+    </sql>
+    <select id="findByUserName" resultMap="resultMap">
+        SELECT
+        <include refid="columnsql"></include>
+        FROM t_user t
+        WHERE t.uname = #{uname}
+    </select>
+</mapper>

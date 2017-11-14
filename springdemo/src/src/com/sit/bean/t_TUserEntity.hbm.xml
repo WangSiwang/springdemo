@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.sit.bean.t_TUserEntity" table="t_user" schema="db-spring-demo">
+        <id name="id">
+            <column name="id" sql-type="varchar(11)" length="11"/>
+        </id>
+        <property name="username">
+            <column name="username" sql-type="varchar(40)" length="40"/>
+        </property>
+        <property name="password">
+            <column name="password" sql-type="varchar(40)" length="40"/>
+        </property>
+        <property name="sex">
+            <column name="sex" sql-type="varchar(4)" length="4"/>
+        </property>
+    </class>
+</hibernate-mapping>
